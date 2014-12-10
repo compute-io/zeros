@@ -1,4 +1,4 @@
-zeros
+Zeros
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
@@ -19,18 +19,40 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var foo = require( 'compute-zeros' );
+var zeros = require( 'compute-zeros' );
 ```
 
-#### foo( arr )
+#### zeros( dims[, type] )
 
-What does this function do?
+Creates an `array` of zeros. The `array` dimensions are specified via an input `array`.
+
+``` javascript
+var arr = zeros( [2,1,2] );
+/* returns
+	[
+		[
+			[0,0]
+		],
+		[
+			[0,0]
+		]
+	]
+*/
+```
 
 
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-zeros' );
+var arr;
+
+// 5x5x5:
+arr = zeros( [5,5,5] );
+console.log( arr );
+
+// 10x5x10x20:
+arr = zeros( [10,5,10,20] );
+console.log( arr );
 ```
 
 To run the example code from the top-level application directory,
