@@ -80,7 +80,7 @@ describe( 'compute-zeros', function tests() {
 		assert.deepEqual( actual, expected );
 
 		actual = zeros( [2,1,2] );
-		expected = [ [[0,0]],[[0,0]] ];
+		expected = [ [[0,0]], [[0,0]] ];
 
 		assert.deepEqual( actual, expected );
 	});

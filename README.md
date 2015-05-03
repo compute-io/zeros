@@ -16,28 +16,17 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
-
 ``` javascript
 var zeros = require( 'compute-zeros' );
 ```
 
-#### zeros( dims[, type] )
+#### zeros( dims[, opts] )
 
-Creates an `array` of zeros. The `array` dimensions are specified via an input `array`.
+Creates an `array` of zeros, where the `array` dimensions are specified by `dims`.
 
 ``` javascript
 var arr = zeros( [2,1,2] );
-/* returns
-	[
-		[
-			[0,0]
-		],
-		[
-			[0,0]
-		]
-	]
-*/
+// returns [ [ [0,0] ], [ [0,0] ] ]
 ```
 
 
@@ -90,15 +79,15 @@ $ make view-cov
 ```
 
 
+---
 ## License
 
 [MIT license](http://opensource.org/licenses/MIT). 
 
 
----
 ## Copyright
 
-Copyright &copy; 2014. Athan Reines.
+Copyright &copy; 2015. Athan Reines.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-zeros.svg
