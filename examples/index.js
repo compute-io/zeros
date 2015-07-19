@@ -4,7 +4,7 @@ var zeros = require( './../lib' ),
 	arr;
 
 // 2x1x2:
-arr = zeros( [2,1,2] );
+arr = zeros( [2,1,3] );
 console.log( arr );
 
 // 5x5x5:

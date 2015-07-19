@@ -29,29 +29,35 @@
     "utilities",
     "utils",
     "array",
+    "arrays",
     "matrix",
+    "matrices",
+    "zero",
     "zeros",
-    "fill"
+    "fill",
+    "typed-array",
+    "dstructs",
+    "ndarray",
+    "multidimensional"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/zeros/issues"
   },
   "dependencies": {
-    "ndarray": "^1.0.16",
-    "validate.io-integer": "^1.0.2"
+    "compute-array-constructors": "^1.0.0",
+    "dstructs-matrix": "^2.0.0",
+    "validate.io-object": "^1.0.4",
+    "validate.io-positive-integer": "^1.0.0",
+    "validate.io-positive-integer-array": "^1.0.0",
+    "validate.io-string-primitive": "^1.0.0"
   },
   "devDependencies": {
-    "chai": "2.x.x",
+    "chai": "3.x.x",
     "mocha": "2.x.x",
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
     "jshint": "2.x.x",
-    "jshint-stylish": "^1.0.0"
+    "jshint-stylish": "2.x.x"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
-    }
-  ]
+  "license": "MIT"
 }
