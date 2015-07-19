@@ -24,6 +24,10 @@ describe( 'compute-zeros', function tests() {
 		expect( zeros ).to.be.a( 'function' );
 	});
 
+	it( 'should export a function to compile a zeros function', function test() {
+		expect( zeros.compile ).to.be.a( 'function' );
+	});
+
 	it( 'should throw an error if not provided a positive integer or an array of positive integers', function test() {
 		var values = [
 			'5',
@@ -148,6 +152,8 @@ describe( 'compute-zeros', function tests() {
 
 	it( 'should support fast elements', function test() {
 		var actual, i;
+
+		this.timeout( 0 );
 
 		actual = zeros( [100000] );
 		for ( i = 0; i < actual.length; i++ ) {

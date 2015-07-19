@@ -1,7 +1,7 @@
 {
   "name": "compute-zeros",
   "version": "0.0.0",
-  "description": "Creates an array of zeros.",
+  "description": "Creates a zero-filled matrix or array.",
   "author": {
     "name": "Athan Reines",
     "email": "kgryte@gmail.com"

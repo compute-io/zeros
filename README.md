@@ -2,7 +2,7 @@ Zeros
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Creates an array of zeros.
+> Creates a zero-filled [matrix](https://github.com/dstructs/matrix) or array.
 
 
 ## Installation
@@ -22,26 +22,104 @@ var zeros = require( 'compute-zeros' );
 
 #### zeros( dims[, opts] )
 
-Creates an `array` of zeros, where the `array` dimensions are specified by `dims`.
+Creates a zero-filled [`matrix`](https://github.com/dstructs/matrix) or [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). The `dims` argument may either be a positive `integer` specifying a `length` or an `array` of positive `integers` specifying dimensions.
 
 ``` javascript
-var arr = zeros( [2,1,2] );
+var out;
+
+out = zeros( 5 );
+// returns [ 0, 0, 0, 0, 0 ];
+
+out = zeros( [2,1,2] );
 // returns [ [ [0,0] ], [ [0,0] ] ]
 ```
+
+The function accepts the following `options`:
+
+*	__dtype__: output [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) or [`matrix`](https://github.com/dstructs/matrix) data type. Default: `generic`.
+
+By default, the output data structure is a generic [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). To output a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays) or [`matrix`](https://github.com/dstructs/matrix), set the `dtype` option (see [`matrix`](https://github.com/dstructs/matrix) for a list of acceptable data types).
+
+``` javascript
+var out;
+
+out = zeros( 5, {
+	'float32'
+});
+// returns Float32Array( [0,0,0,0,0] );
+
+out = zeros( [3,2], {
+	'int32'
+});
+/*
+	[ 0 0
+	  0 0
+	  0 0 ]
+*/
+```
+
+__Notes__:
+*	Currently, for more than `2` dimensions, the function outputs a __generic__ `array` and ignores any specified `dtype`.
+
+	``` javascript
+	var out = zeros( [2,1,3], {
+		'float32'
+	});
+	// returns [ [ [0,0,0] ], [ [0,0,0] ] ]
+	```
+
+
+#### zeros.compile( dims )
+
+Compiles a `function` for creating zero-filled [`arrays`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) having specified dimensions.
+
+``` javascript
+var fcn, out;
+
+fcn = zeros.compile( [2,1,3] );
+
+out = fcn();
+// returns [ [ [0,0,0] ], [ [0,0,0] ] ]
+
+out = fcn();
+// returns [ [ [0,0,0] ], [ [0,0,0] ] ]
+```
+
+__Notes__:
+*	when repeatedly creating [`arrays`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) having the same shape, creating a customized `zeros` function will provide performance benefits.
+
+
 
 
 ## Examples
 
 ``` javascript
-var arr;
+var zeros = require( 'compute-zeros' ),
+	out;
+
+// Plain arrays...
+
+// 1x10:
+out = zeros( 10 );
+
+// 2x1x2:
+out = zeros( [2,1,3] );
 
 // 5x5x5:
-arr = zeros( [5,5,5] );
-console.log( arr );
+out = zeros( [5,5,5] );
 
 // 10x5x10x20:
-arr = zeros( [10,5,10,20] );
-console.log( arr );
+out = zeros( [10,5,10,20] );
+
+// Typed arrays...
+out = zeros( 10, {
+	'dtype': 'float32'
+});
+
+// Matrices...
+out = zeros( [3,2], {
+	'dtype': 'int32'
+});
 ```
 
 To run the example code from the top-level application directory,
@@ -87,7 +165,7 @@ $ make view-cov
 
 ## Copyright
 
-Copyright &copy; 2015. Athan Reines.
+Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-zeros.svg

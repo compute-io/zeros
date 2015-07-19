@@ -31,6 +31,8 @@ describe( 'create zeros function', function tests() {
 	it( 'should correctly create a zeros function for a linear array', function test() {
 		var expected, actual, zeros, i;
 
+		this.timeout( 0 );
+
 		// Small array:
 		zeros = createFcn( [10] );
 
@@ -65,7 +67,6 @@ describe( 'create zeros function', function tests() {
 			arr2,
 			i, j, k;
 
-		/* jshint validthis:true */
 		this.timeout( 0 );
 
 		// [1]
