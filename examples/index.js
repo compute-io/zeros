@@ -12,7 +12,7 @@ console.log( '1x10:' );
 console.log( out );
 console.log( '\n' );
 
-// 2x1x2:
+// 2x1x3:
 out = zeros( [2,1,3] );
 console.log( '2x1x3:' );
 console.log( out );

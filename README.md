@@ -102,7 +102,7 @@ var zeros = require( 'compute-zeros' ),
 // 1x10:
 out = zeros( 10 );
 
-// 2x1x2:
+// 2x1x3:
 out = zeros( [2,1,3] );
 
 // 5x5x5:
