@@ -80,24 +80,6 @@ describe( 'compute-zeros', function tests() {
 		}
 	});
 
-	it( 'should throw an error if provided an unrecognized/unsupported data type option', function test() {
-		var values = [
-			'beep',
-			'boop'
-		];
-
-		for ( var i = 0; i < values.length; i++ ) {
-			expect( badValue( values[i] ) ).to.throw( Error );
-		}
-		function badValue( value ) {
-			return function() {
-				zeros( [10], {
-					'dtype': value
-				});
-			};
-		}
-	});
-
 	it( 'should return a zero-filled matrix', function test() {
 		var matrix = zeros( [2,2], {
 			'dtype': 'int32'
@@ -148,22 +130,6 @@ describe( 'compute-zeros', function tests() {
 		expected = [ [[0,0,0]], [[0,0,0]] ];
 
 		assert.deepEqual( actual, expected );
-	});
-
-	it( 'should support fast elements', function test() {
-		var actual, i;
-
-		this.timeout( 0 );
-
-		actual = zeros( [100000] );
-		for ( i = 0; i < actual.length; i++ ) {
-			assert.strictEqual( actual[ i ], 0 );
-		}
-
-		actual = zeros( [100000,2] );
-		for ( i = 0; i < actual.length; i++ ) {
-			assert.deepEqual( actual[ i ], [0,0] );
-		}
 	});
 
 	it( 'should, until ndarrays are supported, ignore the `dtype` option and return a generic multidimensional array for >2 dimensions', function test() {

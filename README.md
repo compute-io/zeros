@@ -44,12 +44,12 @@ By default, the output data structure is a generic [`array`](https://developer.m
 var out;
 
 out = zeros( 5, {
-	'float32'
+	'dtype': 'float32'
 });
 // returns Float32Array( [0,0,0,0,0] );
 
 out = zeros( [3,2], {
-	'int32'
+	'dtype': 'int32'
 });
 /*
 	[ 0 0
@@ -63,7 +63,7 @@ __Notes__:
 
 	``` javascript
 	var out = zeros( [2,1,3], {
-		'float32'
+		'dtype': 'float32'
 	});
 	// returns [ [ [0,0,0] ], [ [0,0,0] ] ]
 	```
