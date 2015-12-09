@@ -1,6 +1,6 @@
 Zeros
 ===
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Creates a zero-filled [matrix](https://github.com/dstructs/matrix) or array.
 
@@ -160,7 +160,7 @@ $ make view-cov
 ---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 
 ## Copyright
@@ -174,8 +174,8 @@ Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 [travis-image]: http://img.shields.io/travis/compute-io/zeros/master.svg
 [travis-url]: https://travis-ci.org/compute-io/zeros
 
-[coveralls-image]: https://img.shields.io/coveralls/compute-io/zeros/master.svg
-[coveralls-url]: https://coveralls.io/r/compute-io/zeros?branch=master
+[codecov-image]: https://img.shields.io/codecov/c/github/compute-io/zeros/master.svg
+[codecov-url]: https://codecov.io/github/compute-io/zeros?branch=master
 
 [dependencies-image]: http://img.shields.io/david/compute-io/zeros.svg
 [dependencies-url]: https://david-dm.org/compute-io/zeros
